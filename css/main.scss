@@ -22,10 +22,83 @@ body {
 }
 
 // dark mode 
-.dark-mode {
+$size: 1; //Change this factor to upscale/downscale control.
+$ease-custom-1: cubic-bezier(0.560, 0.045, 0.000, 1.000);
+
+.light {
+  --switch-color: rgb(216, 216, 216);
+  --background-color-alternate: rgb(30,30,30);
+}
+
+.dark {
+  --switch-color: rgb(68, 68, 68);
+  --background-color-alternate: rgb(245, 245, 245);
+}
+
+.SwitchControl { 
+  border-radius: 100px * $size;
+  background:var(--switch-color);
+  width:50px * $size;
+  height:24px * $size;
+  overflow:hidden;
+  cursor:pointer;
+  position:relative;
+  margin-top: 10%;
+  margin-left: 30%;
+  .SwitchControl--slider {
+      width:100px * $size;
+      height:100%;
+      position:absolute;
+      top:0;
+      left:calc(50% - 50px * #{$size});
+      transition:all .3s $ease-custom-1 !important;
+      .SwitchControl--knob {
+          width: 20px * $size;
+          height:20px * $size;
+          background:#707070;
+          position:absolute;
+          left:calc(50% - 10px * #{$size});
+          top:2px *$size;
+          border-radius:100px *$size;
+      }
+      .SwitchControl--icon_left, .SwitchControl--icon_right {
+          width:14px*$size;
+          height:14px*$size;
+          position:absolute;
+          top:5px*$size;
+          * {
+              fill:var(--background-color-alternate) !important;
+          }
+      }
+      .SwitchControl--icon_left {
+          left:18px*$size;
+      }
+      .SwitchControl--icon_right {
+          right:18px*$size;
+      }
+  }
+
+  &.on {
+      .SwitchControl--slider {
+          transform:translateX(13px * $size);
+      }
+  }
+  &.off {
+      .SwitchControl--slider {
+          transform:translateX(-13px * $size);
+      }
+  }
+}
+.darkMode{
 filter: invert(100%);
+
 img {
-  filter: drop-shadow(2px 4px 6px black);
+  filter: invert(1);
+}
+.setting-box {
+  .option-box {
+    filter: invert(100%);
+  }
 }
 .landing-page {
   filter: invert(100%);
@@ -52,7 +125,15 @@ h2 {
   
 }
 .testimonials {
-  filter:invert(100%); ;
+  filter:invert(100%); 
+  .preson-info img {
+    filter: inherit;
+  }
+}
+.contact {
+  .overlay{
+    filter: none;
+  }
 }
 }
 //dark mode
@@ -1037,3 +1118,14 @@ h2 {
   }
 }
 /*End Grid System*/
+
+/*
+why i can't handle dark mode on my website ......? Referencing CSS class for Dark Mode
+I have this code o
+
+I have this code on my website for running Dark Mode, my problem is specifically in the javascript code: How can I add the class list called dark-mode to handle it with this switch SwitchControl?
+
+This is the code I use:
+
+
+*/

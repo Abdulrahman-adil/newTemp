@@ -385,21 +385,40 @@ tLinks.onclick = function (e) {
 e.stopPropagation();
 
 }
-// dark mode 
-/* let DarkMode = document.querySelector('.dark-mode'); */
-/* let darkLocal = document.querySelector('.dark-mode');
- */
-/* DarkMode.forEach(span => {
+// dark mode icon
 
-  span.addEventListener("click", (e)  => {
-    if (span.dataset.display === "show") {
-      DarkMode.style.display = "block";s
-    } else {
-      DarkMode.style.display = "none";
+let switchCont = document.querySelectorAll(".SwitchControl");
+/* let dark = document.querySelectorAll('.darkMode'); */
+
+
+switchCont.forEach(
+  switchControl => switchControl.addEventListener("click", () => toggleSwitch(switchControl))
+  );
+
+/* dark.forEach (
+  darkMode => darkMode.addEventListener("click"), () => toggleSwitch(dark)
+) */
+
+const toggleSwitch = (control) => {
+    if(control.classList.contains("off")) {
+        enableSwitch(control);
     }
-    handleActive(e);
-  });
-}); */
+    else if(control.classList.contains("on")) {
+       disableSwitch(control);
+       dark.classList.toggle('darkMode')
+    }
+}
+
+const enableSwitch = (control) => {
+    control.classList.remove("off");
+    control.classList.add("on");
+}
+
+const disableSwitch = (control) => {
+    control.classList.remove("on");
+    control.classList.add("off");
+}
+
 
 // change font style 
 const fontSelector = document.getElementById('myfont');
@@ -409,53 +428,3 @@ const fontSelector = document.getElementById('myfont');
     });
 
 
-    // scroll to top 
-/* let mybdn = document.getElementById("goUp");
-
-// show the button
-window.onscroll = function() {scrollShow()};
-
-function scrollShow() {
-
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    goUp.style.display = "block";
-       } else {
-       goUp.style.display = "none";
-     }
-}
-
-function goTop() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
- */
-
-
-
-/* 
-function scrollTo(Element, to, duration) {
-  let start = Element.scrollTop,
-      change = to - start,
-      CurrentTime = 0,
-      increment = 20;
-
-  let animatScroll = function(){
-    CurrentTime += increment;
-    let val = Math.easeInOutQuad(CurrentTime, start, change, duration);
-    Element.scrollTop = val;
-    if(CurrentTime < duration) {
-      setTimeout(animatScroll, increment);
-    }
-  };
-  animatScroll();
-}
-//t = current time
-//b = start value
-//c = change in value
-//d = duration
-Math.easeInOutQuad = function (t,b,c,d) {
-  t /= d/2;
-    if (t < 1) return c/2*t*t +b;
-    t--;
-    return -c/2 * (t*(t-2) - 1) +b;
-} ; */

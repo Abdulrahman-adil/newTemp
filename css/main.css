@@ -20,49 +20,135 @@ body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.dark-mode {
+.light {
+  --switch-color: rgb(216, 216, 216);
+  --background-color-alternate: rgb(30,30,30);
+}
+
+.dark {
+  --switch-color: rgb(68, 68, 68);
+  --background-color-alternate: rgb(245, 245, 245);
+}
+
+.SwitchControl {
+  border-radius: 100px;
+  background: var(--switch-color);
+  width: 50px;
+  height: 24px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  margin-top: 10%;
+  margin-left: 30%;
+}
+
+.SwitchControl .SwitchControl--slider {
+  width: 100px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 50px * 1);
+  -webkit-transition: all 0.3s cubic-bezier(0.56, 0.045, 0, 1) !important;
+  transition: all 0.3s cubic-bezier(0.56, 0.045, 0, 1) !important;
+}
+
+.SwitchControl .SwitchControl--slider .SwitchControl--knob {
+  width: 20px;
+  height: 20px;
+  background: #707070;
+  position: absolute;
+  left: calc(50% - 10px * 1);
+  top: 2px;
+  border-radius: 100px;
+}
+
+.SwitchControl .SwitchControl--slider .SwitchControl--icon_left, .SwitchControl .SwitchControl--slider .SwitchControl--icon_right {
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: 5px;
+}
+
+.SwitchControl .SwitchControl--slider .SwitchControl--icon_left *, .SwitchControl .SwitchControl--slider .SwitchControl--icon_right * {
+  fill: var(--background-color-alternate) !important;
+}
+
+.SwitchControl .SwitchControl--slider .SwitchControl--icon_left {
+  left: 18px;
+}
+
+.SwitchControl .SwitchControl--slider .SwitchControl--icon_right {
+  right: 18px;
+}
+
+.SwitchControl.on .SwitchControl--slider {
+  -webkit-transform: translateX(13px);
+          transform: translateX(13px);
+}
+
+.SwitchControl.off .SwitchControl--slider {
+  -webkit-transform: translateX(-13px);
+          transform: translateX(-13px);
+}
+
+.darkMode {
   -webkit-filter: invert(100%);
           filter: invert(100%);
 }
 
-.dark-mode img {
-  -webkit-filter: drop-shadow(2px 4px 6px black);
-          filter: drop-shadow(2px 4px 6px black);
+.darkMode img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
 }
 
-.dark-mode .landing-page {
+.darkMode .setting-box .option-box {
   -webkit-filter: invert(100%);
           filter: invert(100%);
 }
 
-.dark-mode h2 {
+.darkMode .landing-page {
   -webkit-filter: invert(100%);
           filter: invert(100%);
 }
 
-.dark-mode .skill-box .skill-progress {
+.darkMode h2 {
   -webkit-filter: invert(100%);
           filter: invert(100%);
 }
 
-.dark-mode .timeline-content {
+.darkMode .skill-box .skill-progress {
   -webkit-filter: invert(100%);
           filter: invert(100%);
 }
 
-.dark-mode .open {
+.darkMode .timeline-content {
   -webkit-filter: invert(100%);
           filter: invert(100%);
 }
 
-.dark-mode .colors-list {
+.darkMode .open {
   -webkit-filter: invert(100%);
           filter: invert(100%);
 }
 
-.dark-mode .testimonials {
+.darkMode .colors-list {
   -webkit-filter: invert(100%);
           filter: invert(100%);
+}
+
+.darkMode .testimonials {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
+
+.darkMode .testimonials .preson-info img {
+  -webkit-filter: inherit;
+          filter: inherit;
+}
+
+.darkMode .contact .overlay {
+  -webkit-filter: none;
+          filter: none;
 }
 
 .popup-overlay {
@@ -261,6 +347,7 @@ body {
   border: 1px solid var(--main-color);
   border-radius: 5px;
   cursor: pointer;
+  outline: none;
 }
 
 .setting-box .settings-container .reset-option {
@@ -1173,4 +1260,14 @@ body {
 }
 
 /*End Grid System*/
+/*
+why i can't handle dark mode on my website ......? Referencing CSS class for Dark Mode
+I have this code o
+
+I have this code on my website for running Dark Mode, my problem is specifically in the javascript code: How can I add the class list called dark-mode to handle it with this switch SwitchControl?
+
+This is the code I use:
+
+
+*/
 /*# sourceMappingURL=main.css.map */
