@@ -106,6 +106,10 @@ body {
           filter: invert(100%);
 }
 
+.darkMode .setting-box .option-box h4 {
+  color: #fff !important;
+}
+
 .darkMode .landing-page {
   -webkit-filter: invert(100%);
           filter: invert(100%);
