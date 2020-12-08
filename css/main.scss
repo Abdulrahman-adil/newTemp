@@ -375,7 +375,7 @@ h2 {
 /*start landig page*/
 .landing-page {
   min-height: 100vh;
-  background-image: url("../img/001.png");
+  background-image: url("../img/001.jpg");
   background-size: cover;
   .overlay {
     background-color: rgba(0, 0, 0, 0.6);
@@ -403,8 +403,7 @@ h2 {
         .links {
           list-style: none;
           padding-left: 0;
-/*           padding-right: 20px;
- */          width: 100%;
+          width: 100%;
           text-align: right;
           li {
             display: inline-block;
@@ -479,7 +478,7 @@ h2 {
 }
 
 /*meadia*/
-@media (max-width: 991px) {
+@media (max-width: 991px)  {
   .landing-page {
     .overlay {
       .container {
@@ -491,7 +490,6 @@ h2 {
              display: none;
               &.open{
                 background-color:#ffffff1f;
-                /* padding: 10px; */
                 display: inline-block;
                 position: absolute;
                 left: 0px;
@@ -505,7 +503,7 @@ h2 {
                   margin: 10px;
                 }
                 li a{
-                  color: var(--main-color) ;
+                  color: #fff ;
                   font-weight: bold;
                   transition: .7s ;
                   &:hover {
@@ -513,6 +511,7 @@ h2 {
                     padding-left: 2px;;
                   }
                 }
+
               }
               
             }
@@ -527,26 +526,46 @@ h2 {
   }
 
 }
-@media (max-width: 767) {
-  .landing-page{
-    .overlay{
-      .container{
+@media (max-width: 767px)  {
+  .landing-page {
+    .overlay {
+      .container {
         .header{
-          .links-container{
+          .links-container {
             .links{
+             display: none;
               &.open{
+                 left: 56%;
+                  width: 40%;
+                li{
+                  display: block;
+                  margin: 10px;
+                }
+                li a{
+                  color: #fff ;
+                  font-weight: bold;
+                  transition: .7s ;
+                  &:hover {
+                    color: #060000;
+                    padding-left: 2px;;
+                  }
+                }
 
-                left: 30px;
-                width: 90%;
-
+              }
+              
+            }
+            .toggle-menu{
+              display: inline-block;
             }
           }
+
         }
       }
     }
   }
+
 }
-}
+
 
 /*End landig page*/
 /* Start about us */
@@ -680,7 +699,7 @@ h2 {
       margin: 5px;
       cursor: pointer;
       @media (max-width: 575px) {
-        width: 100%;
+        width: 325px;
       }
     }
   }
@@ -771,7 +790,6 @@ h2 {
         top: 20px;
      @media (max-width: 767px) {
           display: none; 
-
           }
         } 
         }
@@ -1005,6 +1023,9 @@ h2 {
   .container{
     position: relative;
     z-index: 2;
+    @media (max-width: 767px) {
+      width: 80%;
+    }
   }
   h2{
     font-weight: bold;
