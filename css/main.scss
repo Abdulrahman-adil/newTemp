@@ -117,7 +117,7 @@ h2 {
 
 }
 .timeline-content {
-  filter: invert(100%);
+  /* filter: invert(100%); */
 }
 .open{
   filter: invert(100%);
@@ -128,15 +128,18 @@ h2 {
   
 }
 .testimonials {
-  filter:invert(100%); 
+/*   filter:invert(100%);  */
   .preson-info img {
-    filter: inherit;
+/*     filter: inherit; */
   }
 }
 .contact {
   .overlay{
     filter: none;
   }
+}
+.footer{
+  filter: invert(100%);
 }
 }
 //dark mode
@@ -208,8 +211,8 @@ h2 {
   min-height: 100vh;
   transition: 0.3s;
   @media (max-width: 767px) {
-    min-height: 66.5vh;
-    top: 5em;
+    min-height: 73.5vh;
+    top: 8em;
   }
   &.open {
     left: -200px;
@@ -235,7 +238,24 @@ h2 {
       background: #66c9d652;
       border-radius: 5px;
       margin: 6px; 
-        
+      .bullets-option {
+        @media (max-width: 576px) {
+          display: none;
+        }
+      }
+      .close {
+        @media (max-width: 576px) {
+          background: var(--main-color);
+          padding: 5px 10px;
+          color: #fff;
+          border-radius: 5px;
+          display: inline-block;
+          font-size: 13px;
+          font-weight: bold;
+          opacity: .5;
+          cursor: pointer;
+        }
+      }
         h4{
             color: #060000;
             font-size:14px ;
@@ -330,6 +350,9 @@ h2 {
   transform: translateY(-50%);
   width: 40px;
   z-index: 999;
+  @media (max-width: 576px) {
+display: none !important;
+  }
   .bullet{
     width: 15px;
     height: 15px;
@@ -395,6 +418,7 @@ h2 {
       display: flex;
       padding: 10px;
       .logo {
+
         width: 300px;
         padding: 15px;
         font-weight: bold;
@@ -728,6 +752,9 @@ h2 {
       left: 50%;
       margin-left: -1px;
       top: 0;
+      @media (max-width: 767px) {
+        display: none;
+      }
     }
     .year{
       margin: 20px auto;
@@ -740,6 +767,9 @@ h2 {
       color: #fff;
       padding: 2px 5px ;
       font-weight: bold;
+      @media (max-width: 767px) {
+        margin: 20px 18px;
+      }
     }
     .left,.right{
       width: calc(50% - 25PX);
@@ -757,13 +787,16 @@ h2 {
             content: '';
             border-style: solid;
             border-width: 10px;
-            border-color: transparent transparent #c1c1c1 transparent;
+            border-color: transparent transparent #ffff transparent;
             position: absolute;
             height: 0;
             width: 0;
-            left: 47.1%;
+            left: 48.2%;
              text-align: center; 
             top: -20px;
+            @media (max-width: 767px) {
+              left: 7%;
+            } 
         }
         h3{
           font-weight: bold;
@@ -1102,13 +1135,13 @@ h2 {
 #totp{
   position: fixed;
   bottom: 10px;
-  background: black;
+  background: var(--main-color);
   color: #fff;
   border-radius: 7px;
   padding: 2px;
   right: 0;
   cursor: pointer;
-
+  z-index: 9999;
 }
 /*Start Go UB*/
 /*Frame work*/

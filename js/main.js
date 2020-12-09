@@ -103,7 +103,7 @@ randomBackground.forEach(span => {
 let landingPage = document.querySelector(".landing-page");
 
 // Get Array Of Imgs 
-  let imgArray = ["001.png","002.jpg","003.png","004.jpg","005.jpg","006.jpg"];
+  let imgArray = ["001.jpg","002.jpg","003.jpg","004.jpg","005.jpg","006.jpg"];
 
  // function to randomize imgs 
 
