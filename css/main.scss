@@ -105,7 +105,9 @@ img {
 }
 .landing-page {
   filter: invert(100%);
- 
+ .links-container .open {
+  filter: revert;
+ }
 }
 h2 {
   filter: invert(100%);

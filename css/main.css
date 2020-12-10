@@ -115,6 +115,11 @@ body {
           filter: invert(100%);
 }
 
+.darkMode .landing-page .links-container .open {
+  -webkit-filter: revert;
+          filter: revert;
+}
+
 .darkMode h2 {
   -webkit-filter: invert(100%);
           filter: invert(100%);
