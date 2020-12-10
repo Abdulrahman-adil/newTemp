@@ -228,9 +228,10 @@ body {
   background: #f1f1f1;
   width: 200px;
   z-index: 1000;
-  min-height: 100vh;
+  /*  min-height: 100vh; */
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  padding-bottom: 10px;
 }
 
 @media (max-width: 767px) {
@@ -275,6 +276,10 @@ body {
   .setting-box .settings-container .option-box .bullets-option {
     display: none;
   }
+}
+
+.setting-box .settings-container .option-box .close {
+  display: none;
 }
 
 @media (max-width: 576px) {
@@ -564,6 +569,12 @@ body {
   line-height: 2;
   font-size: 18px;
   margin: 0;
+}
+
+@media (max-width: 991px) {
+  .landing-page .introduction {
+    top: 70%;
+  }
 }
 
 .landing-page .introduction h1 {
