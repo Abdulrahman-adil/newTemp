@@ -110,6 +110,14 @@ body {
   color: #fff !important;
 }
 
+.darkMode .setting-box .option-box h3 {
+  color: #fff !important;
+}
+
+.darkMode .setting-box .option-box h2 {
+  color: #fff !important;
+}
+
 .darkMode .landing-page {
   -webkit-filter: invert(100%);
           filter: invert(100%);
@@ -120,7 +128,7 @@ body {
           filter: revert;
 }
 
-.darkMode h2 {
+.darkMode h3 {
   -webkit-filter: invert(100%);
           filter: invert(100%);
 }
@@ -128,10 +136,6 @@ body {
 .darkMode .skill-box .skill-progress {
   -webkit-filter: invert(100%);
           filter: invert(100%);
-}
-
-.darkMode .timeline-content {
-  /* filter: invert(100%); */
 }
 
 .darkMode .open {
@@ -144,14 +148,6 @@ body {
           filter: invert(100%);
 }
 
-.darkMode .testimonials {
-  /*   filter:invert(100%);  */
-}
-
-.darkMode .testimonials .preson-info img {
-  /*     filter: inherit; */
-}
-
 .darkMode .contact .overlay {
   -webkit-filter: none;
           filter: none;
@@ -160,6 +156,34 @@ body {
 .darkMode .footer {
   -webkit-filter: invert(100%);
           filter: invert(100%);
+}
+
+.darkMode #test {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 0px #d1d1d1;
+          box-shadow: inset 0 0 0px #d1d1d1;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000;
 }
 
 .popup-overlay {
@@ -229,20 +253,33 @@ body {
 .setting-box {
   position: fixed;
   left: 0;
-  top: 0;
+  top: 10%;
   background: #f1f1f1;
   width: 200px;
   z-index: 1000;
   /*  min-height: 100vh; */
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 1s;
+  transition: 1s;
   padding-bottom: 10px;
+}
+
+@media (max-width: 991px) {
+  .setting-box {
+    top: 9%;
+  }
 }
 
 @media (max-width: 767px) {
   .setting-box {
-    min-height: 73.5vh;
-    top: 8em;
+    /*   min-height: 73.5vh; */
+    top: 3.6em;
+  }
+}
+
+@media (max-width: 576px) {
+  .setting-box {
+    /*   min-height: 73.5vh; */
+    top: 6em;
   }
 }
 
@@ -265,15 +302,40 @@ body {
   width: 30px;
 }
 
+.setting-box .setings {
+  position: relative;
+  margin-left: 17px;
+}
+
+.setting-box .setings h2 {
+  padding: 0;
+  margin: 0;
+  margin-top: 7px;
+}
+
+.setting-box .setings h2::after {
+  position: absolute;
+  content: "";
+  height: 3px;
+  bottom: -12px;
+  left: -9px;
+  /* right: -10px; */
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  /* BACKGROUND-COLOR: #218a67; */
+  background: linear-gradient(70deg, #ff9800, #e92463, #019688, #4caf50, #4caf50);
+}
+
 .setting-box .settings-container {
   color: #fff;
 }
 
 .setting-box .settings-container .option-box {
-  padding: 10px;
+  /*  padding: 10px; */
   text-align: center;
-  background: #66c9d652;
-  border-radius: 5px;
+  /* background: #66c9d652; */
+  /*  border-radius: 5px; */
   margin: 6px;
 }
 
@@ -317,7 +379,7 @@ body {
   background-color: #333;
   border-radius: 50%;
   cursor: pointer;
-  border: 2px solid #eee;
+  border: 3px solid #ada6a6;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -384,6 +446,11 @@ body {
   border-radius: 5px;
   cursor: pointer;
   outline: none;
+}
+
+.setting-box .settings-container .option-box .darkMode h3 {
+  color: black;
+  font-size: 14px;
 }
 
 .setting-box .settings-container .reset-option {
@@ -604,9 +671,9 @@ body {
     background-color: #ffffff1f;
     display: inline-block;
     position: absolute;
-    left: 0px;
+    right: 0px;
     top: 50px;
-    width: 100%;
+    width: 18%;
     border-radius: 4px;
     text-align: left;
   }
@@ -830,6 +897,14 @@ body {
   background: #eee;
 }
 
+.timline h2 {
+  font-weight: bold;
+  font-size: 30px;
+  color: var(--main-color);
+  margin: 0 0 50px;
+  text-align: center;
+}
+
 .timline .timeline-content {
   position: relative;
   overflow: hidden;
@@ -992,6 +1067,78 @@ body {
 }
 
 /*END TimeLine*/
+/* What Clint Says*/
+.testim {
+  background: url(../img/keyboard.jpg);
+  background-size: cover;
+  height: 400px;
+  position: relative;
+  text-align: center;
+  padding: 80px 0;
+}
+
+.testim .t-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  color: aliceblue;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.testim .t-overlay .container {
+  padding-top: 6em;
+}
+
+.testim .t-overlay .container h2 {
+  margin: 68px 0;
+  font-size: 23px;
+}
+
+.testim .t-overlay .container .slider div p {
+  line-height: 2;
+  font-size: 23px;
+  color: #9fa7ae;
+}
+
+.testim .t-overlay .container .slider div p .q-o {
+  position: relative;
+}
+
+.testim .t-overlay .container .slider div p .q-o::before {
+  content: ",,";
+  color: #18BB9E;
+  font-size: 25px;
+  position: absolute;
+  margin: -33px 0 0px -8px;
+}
+
+.testim .t-overlay .container .slider div p .q-o::after {
+  content: ",,";
+  color: #18BB9E;
+  font-size: 25px;
+  position: absolute;
+  top: 26%;
+}
+
+.testim .t-overlay .container .slider div span {
+  display: block;
+  margin: 80px 0;
+  color: #18BB9E;
+  font-size: 20px;
+}
+
+.testim .t-overlay .container .slider div > div {
+  display: none !important;
+}
+
+.testim .t-overlay .container .slider div.active {
+  display: block !important;
+}
+
+/* What Clint Says*/
 /*Start Fet*/
 .features {
   padding-top: 80px;
@@ -1321,6 +1468,11 @@ body {
 /*Frame work*/
 .clearfix {
   clear: both;
+}
+
+hr {
+  width: 80%;
+  border: 1px solid #c5c5c5;
 }
 
 /*Stat Grid System*/

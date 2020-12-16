@@ -34,7 +34,7 @@ if (mainColors !== null) {
 // Toggle Span Class On Icon
 let toogleBox = document.querySelector(".toggle-setting .cus-icon").onclick = function () {
   // toggle class fa-spin for Rotation on self
-  this.classList.toggle('fa-spin');
+/*   this.classList.toggle('open'); */
 
 // Toggle class Open On Main Setting Box
   document.querySelector(".setting-box").classList.toggle('open');
