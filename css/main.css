@@ -39,7 +39,7 @@ body {
   cursor: pointer;
   position: relative;
   margin-top: 10%;
-  margin-left: 30%;
+  margin-left: 36%;
 }
 
 .SwitchControl .SwitchControl--slider {
@@ -96,6 +96,11 @@ body {
           filter: invert(100%);
 }
 
+.darkMode .about-us h2, .darkMode .skills h2, .darkMode .gallery h2, .darkMode .timline h2, .darkMode .features h2, .darkMode .contact h2, .darkMode .testimonials h2, .darkMode .footer h2 {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
+
 .darkMode img {
   -webkit-filter: invert(1);
           filter: invert(1);
@@ -112,6 +117,8 @@ body {
 
 .darkMode .setting-box .option-box h3 {
   color: #fff !important;
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
 }
 
 .darkMode .setting-box .option-box h2 {
@@ -129,21 +136,10 @@ body {
 }
 
 .darkMode h3 {
-  -webkit-filter: invert(100%);
-          filter: invert(100%);
+  /* filter: invert(100%); */
 }
 
 .darkMode .skill-box .skill-progress {
-  -webkit-filter: invert(100%);
-          filter: invert(100%);
-}
-
-.darkMode .open {
-  -webkit-filter: invert(100%);
-          filter: invert(100%);
-}
-
-.darkMode .colors-list {
   -webkit-filter: invert(100%);
           filter: invert(100%);
 }
@@ -159,6 +155,11 @@ body {
 }
 
 .darkMode #test {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
+
+.darkMode #totp {
   -webkit-filter: invert(100%);
           filter: invert(100%);
 }
@@ -565,6 +566,10 @@ body {
   font-size: 23px;
 }
 
+.landing-page .overlay .header .logo small {
+  color: var(--main-color);
+}
+
 .landing-page .overlay .header .links-container {
   width: 100%;
   text-align: right;
@@ -807,22 +812,19 @@ body {
   margin: 15px;
 }
 
-@media (max-width: 575px) {
-  .skills .skill-box {
-    display: block;
-  }
+.skills .skill-box .skill-name {
+  width: 70px;
 }
 
-.skills .skill-box .skill-name {
-  font-weight: bold;
-  width: 140px;
-  text-align: center;
-  line-height: 30px;
+.skills .skill-box .skill-name img {
+  width: 50px;
+  height: 50px;
 }
 
 @media (max-width: 575px) {
   .skills .skill-box .skill-name {
-    width: 100%;
+    /*        width: 100%;
+ */
   }
 }
 
@@ -833,6 +835,7 @@ body {
   border-radius: 5px;
   position: relative;
   overflow: hidden;
+  margin-top: 12px;
 }
 
 .skills .skill-box .skill-progress > SPAN {
