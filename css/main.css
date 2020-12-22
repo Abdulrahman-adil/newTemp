@@ -116,7 +116,7 @@ body {
 }
 
 .darkMode .setting-box .option-box h3 {
-  color: #fff !important;
+  color: #fff;
   -webkit-filter: invert(100%);
           filter: invert(100%);
 }
@@ -133,10 +133,6 @@ body {
 .darkMode .landing-page .links-container .open {
   -webkit-filter: revert;
           filter: revert;
-}
-
-.darkMode h3 {
-  /* filter: invert(100%); */
 }
 
 .darkMode .skill-box .skill-progress {
@@ -254,14 +250,22 @@ body {
 .setting-box {
   position: fixed;
   left: 0;
-  top: 10%;
-  background: #f1f1f1;
+  top: 0;
+  /*   background:#f1f1f1b0;  */
   width: 200px;
   z-index: 1000;
-  /*  min-height: 100vh; */
+  min-height: 100vh;
   -webkit-transition: 1s;
   transition: 1s;
-  padding-bottom: 10px;
+  /*   padding-bottom: 10px;
+  border-radius: 10px; */
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
 }
 
 @media (max-width: 991px) {
@@ -290,13 +294,14 @@ body {
 
 .setting-box .toggle-setting {
   position: absolute;
-  right: -30px;
+  right: -34px;
   top: 6em;
   background: #fff;
   border-radius: 0px 5px 5px 0;
   text-align: center;
   cursor: pointer;
   padding: 7px 0;
+  border: 2px solid #333;
 }
 
 .setting-box .toggle-setting i {
@@ -375,18 +380,22 @@ body {
 }
 
 .setting-box .settings-container .option-box .colors-list li {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   background-color: #333;
   border-radius: 50%;
   cursor: pointer;
-  border: 3px solid #ada6a6;
+  border: 3px solid #f1f1f1;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
 }
 
 .setting-box .settings-container .option-box .colors-list li.active {
+  border-color: #05158a;
+}
+
+.setting-box .settings-container .option-box .colors-list li:hover {
   border-color: #05158a;
 }
 
@@ -408,6 +417,10 @@ body {
 
 .setting-box .settings-container .option-box .colors-list li:nth-child(5) {
   background-color: #4CAF50;
+}
+
+.setting-box .settings-container .option-box .colors-list li:nth-child(6) {
+  background-color: #9c27b0;
 }
 
 .setting-box .settings-container .option-box span.active {
@@ -450,7 +463,6 @@ body {
 }
 
 .setting-box .settings-container .option-box .darkMode h3 {
-  color: black;
   font-size: 14px;
 }
 
@@ -1343,7 +1355,7 @@ body {
 /*Start Contact*/
 .contact {
   min-height: 480px;
-  background-image: url(/img/contact.gif);
+  background-image: url(/img/mmm9.png);
   background-size: cover;
   padding-top: 80px;
   padding-bottom: 80px;
@@ -1356,7 +1368,7 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(225, 255, 255, 0);
+  background-color: rgba(249, 249, 249, 0.6);
   /* background-color: rgb(255 255 255 / 60%); */
 }
 
@@ -1475,7 +1487,7 @@ body {
 
 hr {
   width: 80%;
-  border: 1px solid #c5c5c5;
+  border: 1px solid #945e5e;
 }
 
 /*Stat Grid System*/

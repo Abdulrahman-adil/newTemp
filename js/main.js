@@ -1,61 +1,70 @@
 // check if theres local storage color option 
 let mainColors = localStorage.getItem('color_option');
+// check if theres local storage bulletLocalItem option 
 let bulletLocalItem = localStorage.getItem("bullets_option");
-
-
-
+// check if there's local Storage Random Background Item 
+ let backGroundLocalItem = localStorage.getItem("background_option"); 
+ // check if there's  local storage darkmood
+ let DarkMood = localStorage.getItem("Dark_Mode"); 
+//=================================================================================================
 if (mainColors !== null) {
 /*   console.log('local storage is not Empty You Can Set On Root Now');
   console.log(localStorage.getItem('color_option')); */
-
   document.documentElement.style.setProperty("--main-color", mainColors);
-
     // Remove Active Class From All Colors List Items 
     document.querySelectorAll(".colors-list li").forEach(Element => {
-
       Element.classList.remove('active');
-
       // Add Active Class On Elemnt With Data Color === Local Storage Item 
        if (Element.dataset.color === mainColors) {
-
        // Add active class
        Element.classList.add('active');
       };
     });
 };
+//=================================================================================================
+   // Random BackGround Option 
+   let backgroundOption = true;
+   // variable to control the background interval 
+   let backgroundInterval;
 
- // Random BackGround Option 
- let backgroundOption = true;
-
- // variable to control the background interval 
- let backgroundInterval;
+// check id random backgrond local storage is not Empty 
+if (backGroundLocalItem !== null ) {
+  if (backGroundLocalItem === "true") {
+    backgroundOption = true;
+  } else {
+    backgroundOption = false;    
+  }
+ 
+/*   document.querySelectorAll(".random-back span").forEach(Element => {
+    Element.classList.remove("active");
+  });
+  if (backGroundLocalItem === 'true') {
+    document.querySelector(".random-back .yes").classList.add("active");
+  } else {
+    document.querySelector(".random-back .no").classList.add("active");
+  } */
+}
 
 
 // Toggle Span Class On Icon
-let toogleBox = document.querySelector(".toggle-setting .cus-icon").onclick = function () {
+let toogleBox = document.querySelector(".toggle-setting .fa-gear").onclick = function () {
   // toggle class fa-spin for Rotation on self
-/*   this.classList.toggle('open'); */
+  this.classList.toggle('open'); 
 
 // Toggle class Open On Main Setting Box
   document.querySelector(".setting-box").classList.toggle('open');
 };
 
-
 // Switch Colors 
 const colorsLi = document.querySelectorAll(".colors-list li");
-
 // loop On All List Items
 colorsLi.forEach(li => {
-
   // click on every list items
   li.addEventListener("click", (e) => {
-
     // set color On Root 
     document.documentElement.style.setProperty("--main-color", e.target.dataset.color);
-
     // Set Color On Local Storage 
     localStorage.setItem("color_option", e.target.dataset.color);
-
     // Remove Active Class From All spans 
     // add Active Class On target self 
     handleActive(e);
@@ -63,40 +72,31 @@ colorsLi.forEach(li => {
   });
 
 });
-/* let backgroundOption = localStorage.getItem("background_option"); */
+
 // Switch random background option 
 const randomBackground = document.querySelectorAll(".random-back span");
-
-// loop On spans
+// loop On all spans
 randomBackground.forEach(span => {
-
   // click on every span
   span.addEventListener("click", (e) => {
-
     // Remove Active Class From All spans 
     // add Active Class On target self 
       handleActive(e);
 
      if (e.target.dataset.background === 'yes') {
-
       backgroundOption = true;
-
       randomizeImg();
 
-      localStorage.setItem('background_option, true');
-
+      localStorage.setItem("background_option", true);
      } else {
-
       backgroundOption = false;
 
       clearInterval(backgroundInterval);
-      
-      localStorage.setItem('background_option, false');
 
+      localStorage.setItem("background_option", false);
+     
      };
-
   });
-
 });
 
 // select landing page Element 
@@ -106,23 +106,14 @@ let landingPage = document.querySelector(".landing-page");
   let imgArray = ["001.jpg","002.jpg","003.jpg","004.jpg","005.jpg","006.jpg"];
 
  // function to randomize imgs 
-
  function randomizeImg() {
-    
    if (backgroundOption === true) {
-
    backgroundInterval =  setInterval(() => { // es6
-
       // get random number 
-       
        let randomNumber = Math.floor(Math.random() * imgArray.length);
-   
      // change background url 
-   
      landingPage.style.backgroundImage = 'url("img/' + imgArray[randomNumber] + '")';
-   
-   }, 10000);
-
+   }, 1000);
    };
  };
 
@@ -344,11 +335,27 @@ bulletSpan.forEach(span => {
 
  // Reset Button 
 
- document.querySelector(".reset-option").onclick = function () {
+/*  document.querySelector(".reset-option").onclick = function () {
 
     localStorage.clear();
+    window.location.reload();
+ }; */
+
+var event = new MouseEvent('onclick', {
+  'view': window,
+  'bubbles': true,
+  'cancelable': true
+});
+document.querySelector(".reset-option").onclick = function () {
+
+  localStorage.clear();
   window.location.reload();
- };
+};
+var cc=document.querySelector(".reset-option");
+cc.addEventListener('click' ,function() {
+  
+  alert('you will reset all option');
+});
 
  // Toggle Menu 
 
