@@ -341,7 +341,7 @@ bulletSpan.forEach(span => {
     window.location.reload();
  }; */
 
-var event = new MouseEvent('onclick', {
+/* var event = new MouseEvent('onclick', {
   'view': window,
   'bubbles': true,
   'cancelable': true
@@ -355,7 +355,27 @@ var cc=document.querySelector(".reset-option");
 cc.addEventListener('click' ,function() {
   
   alert('you will reset all option');
-});
+}); */
+
+document.querySelector(".reset-option").onclick = function () {
+  
+  swal.fire({
+    title: "OOPS !",
+    text: "You Want To Resat Your Style!",
+    icon: "warning",
+    showCancelButton: true
+  }).then((result) => {
+    if (result.isConfirmed) {
+      console.log("confirmed");
+      localStorage.clear();
+      window.location.reload();
+    }else{
+      console.log("canceled")
+    }
+  })
+    
+  
+};
 
  // Toggle Menu 
 
