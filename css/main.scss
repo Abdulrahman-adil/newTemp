@@ -146,28 +146,29 @@ img {
   filter: invert(100%);
 }
 }
-//dark mode
+//end dark mode
+
 //scroll style 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 0px rgb(209, 209, 209); 
-  border-radius: 10px;
+  /* border-radius: 10px; */
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background:  var(--main-color);
-  border-radius: 10px;
+ /*  border-radius: 10px; */
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #b30000; 
+  background: #1b2c01; 
 }
 //scroll style 
 .popup-overlay{
@@ -230,15 +231,12 @@ img {
 /*Setting-box*/
 .setting-box {
   position: fixed;
-  left: 0;
+  left:-200px; 
   top:0;
-/*   background:#f1f1f1b0;  */
   width: 200px;
   z-index: 1000;
    min-height: 100vh; 
-  transition: 1s;
-/*   padding-bottom: 10px;
-  border-radius: 10px; */
+  /* transition: 0.8s; */
   background-color: #fff;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
@@ -246,20 +244,10 @@ img {
   border: 1px solid rgba(0,0,0,.15);
   border-radius: 4px;
   box-shadow: 0 6px 12px rgba(0,0,0,.175);
-  @media (max-width: 991px) {
-    top: 9%;
-  }
-  @media (max-width: 767px) {
-  /*   min-height: 73.5vh; */
-    top: 3.6em;
-  }
-  @media (max-width: 576px) {
-    /*   min-height: 73.5vh; */
-      top: 6em;
-    }
-  &.open {
-    left: -200px;
-  }
+
+/*   &.open{
+   left: 0;
+  } */
   .toggle-setting {
     position: absolute;
     right: -34px;
@@ -404,7 +392,52 @@ img {
       font-size: 14px;
     }
   }
+  .support-us-mo {
+    display: none !important;
+    @media (max-width: 576px){
+      display: block !important;
+    }
+    h2{
+    font-size: 17px;
+    color: #333;
 
+      }
+  }
+  .social {
+    text-align: center;
+    a{
+      padding: 10px;
+      margin: 5px;
+      border-radius: 5px;
+      
+      text-decoration: none;
+      cursor: pointer;
+      i{
+        color: white;
+        margin-right: 10px;
+      }
+      small{
+        color: white;
+        text-transform: uppercase;
+      }
+      &.fb{
+        background-color: #3b5998;
+      }
+      &.twe{
+        background-color: #55acee;
+      }
+      &.insta{
+        background-color:#e4405f;
+      }
+    
+    &.linkd{
+      background-color:#004182;
+    }
+  }
+  @media (max-width: 576px) {
+    display: inline-grid;
+  }
+}
 }
 .reset-option{
     background-color: #E91E63;
@@ -809,11 +842,17 @@ display: none !important;
       width: 200px;
       padding: 3px;
       background: #f6f6f6;
-      border: 1px solid #ccc;
+      border: 2px solid #ccc;
       margin: 5px;
       cursor: pointer;
       @media (max-width: 575px) {
         width: 325px;
+      }
+      &:hover {
+        border-radius: 5px;
+        border: 2px solid rgb(97, 1, 1);
+        border-color: rgb(31, 1, 1);
+        transition: 1s ease-in-out ;
       }
     }
   }
@@ -981,10 +1020,9 @@ display: none !important;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 400px;
+  min-height: 370px;
   position: relative;
   text-align: center;
-  padding: 80px 0;
    .t-overlay {
     position: absolute;
     left: 0;
@@ -995,16 +1033,16 @@ display: none !important;
     color: aliceblue;
     background-color: rgba(0, 0, 0, .6);
      .container {
-       padding-top:6em;
+      padding-top: 6em;
       h2 {
-        margin: 68px 0;
-        font-size: 23px
+        font-size: 23px;
+        margin-top: 2em;
       }
       .slider{
 div { 
   p {
-    line-height: 2;
-    font-size: 23px;
+    line-height: 1;
+    font-size: 18px;
     color: #9fa7ae;
     .q-o{
       position: relative;
@@ -1026,7 +1064,6 @@ div {
   }
   span {
     display: block;
-    margin: 80px 0;
     color: #18BB9E;
     font-size: 20px
   }
@@ -1077,7 +1114,10 @@ div {
       border: 4px solid #ccc;
       margin: 5px;
       border-radius: 50%;
-      
+      &:hover{
+        border: 4px solid var(--main-color);
+        transition: 0.5s ease-in-out;
+      }
     }
     h4 {
       font-size: 22px;
@@ -1206,12 +1246,17 @@ div {
 
 /*Start Contact*/
 .contact{
-  min-height: 480px;
+  min-height: 400px;
   background-image: url(/img/mmm9.png);
   background-size: cover;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 74px;
+  padding-bottom: 0;
+  /* margin-bottom: 32px; */
   position: relative;
+  @media (max-width: 767px) {
+    margin-bottom: 32px;
+
+  }
   .overlay{
     position: absolute;
     left: 0;
@@ -1286,6 +1331,11 @@ div {
   }
 }
 /*End Contact*/
+
+
+/*start support-us*/
+
+/*End support-us*/
 /*Satrt footer*/
 
 /*End footer*/
@@ -1294,7 +1344,106 @@ div {
   color: #fff;
   padding: 20px;
   text-align: center;
+.container{
+  display: flex;
+  @media (max-width: 796px) {
+    display: block;
+  }
+  .support-us{
+    @media (max-width: 576px) {
+      display: none;
+    }
+    h2{
+    font-size: 17px;
+    color: var(--main-color);
+    text-align: left;
+    padding-bottom: 14px;
+    @media (max-width: 796px) {
+      text-align: center;
+    }
+    }
+    .social {
+      text-align: center;
+      a{
+        padding: 10px;
+        margin: 5px;
+        border-radius: 5px;
+        text-decoration: none;
+        cursor: pointer;
+        @media (max-width: 991px) {
+          padding: 8px;
+          margin: 1px;
+          transition: 0.6s;
+        }
+        i{
+          color: white;
+          margin-right: 10px;
+         
+        }
+        small{
+          color: white;
+          text-transform: uppercase;
+        }
+        &.fb{
+          background-color: #3b5998;
+          &:hover{
+            background-color: #004182;
+            box-shadow: -9px -3px 20px 4px rgba(72, 1, 185, 0.175);  
+          }
+        }
+        &.twe{
+          background-color: #55acee;
+          &:hover{
+            background-color:#0264af;
+            box-shadow: -9px -3px 20px 4px rgba(24, 133, 235, 0.175);  
+          }
+        }
+        &.insta{
+          background-color:#e4405f;
+          &:hover{
+            background-color: #850617;
+            box-shadow: -9px -3px 20px 4px rgba(233, 68, 117, 0.175);  
 
+          }
+        }
+      
+      &.linkd{
+        background-color:#004182;
+        &:hover{
+          background-color: #022547;
+          box-shadow: -9px -3px 20px 4px rgba(14, 18, 235, 0.175);  
+
+        }
+      }
+    }
+    @media (max-width: 576px) {
+      display: inline-grid;
+    }
+  }
+  
+}
+.created {
+  flex: 1;
+  text-align: right;
+  margin-top: 3.5em;
+
+  @media (max-width: 796px) {
+    text-align: center;
+  }
+  @media (max-width: 576px) {
+margin: 0;
+  }
+span {
+  a{
+    i
+    {
+      color: red;
+    }
+
+  }
+}
+}
+}
 }
 
 /*Start Go UB*/
@@ -1346,15 +1495,3 @@ hr {
     max-width:1140px;
   }
 }
-/*End Grid System*/
-
-/*
-why i can't handle dark mode on my website ......? Referencing CSS class for Dark Mode
-I have this code o
-
-I have this code on my website for running Dark Mode, my problem is specifically in the javascript code: How can I add the class list called dark-mode to handle it with this switch SwitchControl?
-
-This is the code I use:
-
-
-*/

@@ -35,25 +35,44 @@ if (backGroundLocalItem !== null ) {
     backgroundOption = false;    
   }
  
-/*   document.querySelectorAll(".random-back span").forEach(Element => {
+  document.querySelectorAll(".random-back span").forEach(Element => {
     Element.classList.remove("active");
   });
   if (backGroundLocalItem === 'true') {
     document.querySelector(".random-back .yes").classList.add("active");
   } else {
     document.querySelector(".random-back .no").classList.add("active");
-  } */
+  } 
 }
 
 
 // Toggle Span Class On Icon
-let toogleBox = document.querySelector(".toggle-setting .fa-gear").onclick = function () {
+/* let toogleBox = document.querySelector(".toggle-setting .fa-gear").onclick = function () {
   // toggle class fa-spin for Rotation on self
-  this.classList.toggle('open'); 
+   this.classList.toggle('open');  
 
 // Toggle class Open On Main Setting Box
-  document.querySelector(".setting-box").classList.toggle('open');
-};
+   document.querySelector(".setting-box").classList.toggle('open');
+
+   document.addEventListener('click', function(event) {
+    !event.target.closest('.setting-box') && SettingBox.classList.contains('open') && menu.classList.remove('open');
+  });
+   
+};  */
+
+// anther code .......!!
+/* 
+ let SettingBox = document.querySelector(".setting-box");
+let toogleSett = document.querySelector(".toggle-setting .fa-gear");
+
+Body.addEventListener('click', function() {
+  SettingBox.classList.remove('open');
+});
+
+document.addEventListener('click', function(event) {
+  !event.target.closest('.setting-box') && SettingBox.classList.contains('open') && menu.classList.remove('open');
+});   */
+
 
 // Switch Colors 
 const colorsLi = document.querySelectorAll(".colors-list li");
@@ -113,7 +132,7 @@ let landingPage = document.querySelector(".landing-page");
        let randomNumber = Math.floor(Math.random() * imgArray.length);
      // change background url 
      landingPage.style.backgroundImage = 'url("img/' + imgArray[randomNumber] + '")';
-   }, 1000);
+   }, 10000);
    };
  };
 

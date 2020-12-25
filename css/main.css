@@ -162,25 +162,25 @@ body {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 0px #d1d1d1;
           box-shadow: inset 0 0 0px #d1d1d1;
-  border-radius: 10px;
+  /* border-radius: 10px; */
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: var(--main-color);
-  border-radius: 10px;
+  /*  border-radius: 10px; */
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #b30000;
+  background: #1b2c01;
 }
 
 .popup-overlay {
@@ -249,16 +249,12 @@ body {
 /*Setting-box*/
 .setting-box {
   position: fixed;
-  left: 0;
+  left: -200px;
   top: 0;
-  /*   background:#f1f1f1b0;  */
   width: 200px;
   z-index: 1000;
   min-height: 100vh;
-  -webkit-transition: 1s;
-  transition: 1s;
-  /*   padding-bottom: 10px;
-  border-radius: 10px; */
+  /* transition: 0.8s; */
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #ccc;
@@ -266,30 +262,9 @@ body {
   border-radius: 4px;
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
           box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-}
-
-@media (max-width: 991px) {
-  .setting-box {
-    top: 9%;
-  }
-}
-
-@media (max-width: 767px) {
-  .setting-box {
-    /*   min-height: 73.5vh; */
-    top: 3.6em;
-  }
-}
-
-@media (max-width: 576px) {
-  .setting-box {
-    /*   min-height: 73.5vh; */
-    top: 6em;
-  }
-}
-
-.setting-box.open {
-  left: -200px;
+  /*   &.open{
+   left: 0;
+  } */
 }
 
 .setting-box .toggle-setting {
@@ -464,6 +439,66 @@ body {
 
 .setting-box .settings-container .option-box .darkMode h3 {
   font-size: 14px;
+}
+
+.setting-box .settings-container .option-box .support-us-mo {
+  display: none !important;
+}
+
+@media (max-width: 576px) {
+  .setting-box .settings-container .option-box .support-us-mo {
+    display: block !important;
+  }
+}
+
+.setting-box .settings-container .option-box .support-us-mo h2 {
+  font-size: 17px;
+  color: #333;
+}
+
+.setting-box .settings-container .option-box .social {
+  text-align: center;
+}
+
+.setting-box .settings-container .option-box .social a {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.setting-box .settings-container .option-box .social a i {
+  color: white;
+  margin-right: 10px;
+}
+
+.setting-box .settings-container .option-box .social a small {
+  color: white;
+  text-transform: uppercase;
+}
+
+.setting-box .settings-container .option-box .social a.fb {
+  background-color: #3b5998;
+}
+
+.setting-box .settings-container .option-box .social a.twe {
+  background-color: #55acee;
+}
+
+.setting-box .settings-container .option-box .social a.insta {
+  background-color: #e4405f;
+}
+
+.setting-box .settings-container .option-box .social a.linkd {
+  background-color: #004182;
+}
+
+@media (max-width: 576px) {
+  .setting-box .settings-container .option-box .social {
+    display: -ms-inline-grid;
+    display: inline-grid;
+  }
 }
 
 .setting-box .settings-container .reset-option {
@@ -893,7 +928,7 @@ body {
   width: 200px;
   padding: 3px;
   background: #f6f6f6;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   margin: 5px;
   cursor: pointer;
 }
@@ -902,6 +937,14 @@ body {
   .gallery .imgs-box img {
     width: 325px;
   }
+}
+
+.gallery .imgs-box img:hover {
+  border-radius: 5px;
+  border: 2px solid #610101;
+  border-color: #1f0101;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
 }
 
 /*ENd Gallery*/
@@ -1086,10 +1129,9 @@ body {
 .testim {
   background: url(../img/keyboard.jpg);
   background-size: cover;
-  height: 400px;
+  min-height: 370px;
   position: relative;
   text-align: center;
-  padding: 80px 0;
 }
 
 .testim .t-overlay {
@@ -1108,13 +1150,13 @@ body {
 }
 
 .testim .t-overlay .container h2 {
-  margin: 68px 0;
   font-size: 23px;
+  margin-top: 2em;
 }
 
 .testim .t-overlay .container .slider div p {
-  line-height: 2;
-  font-size: 23px;
+  line-height: 1;
+  font-size: 18px;
   color: #9fa7ae;
 }
 
@@ -1140,7 +1182,6 @@ body {
 
 .testim .t-overlay .container .slider div span {
   display: block;
-  margin: 80px 0;
   color: #18BB9E;
   font-size: 20px;
 }
@@ -1194,6 +1235,12 @@ body {
   border: 4px solid #ccc;
   margin: 5px;
   border-radius: 50%;
+}
+
+.features .container .feat-box img:hover {
+  border: 4px solid var(--main-color);
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .features .container .feat-box h4 {
@@ -1354,12 +1401,19 @@ body {
 /*EDN testimonials*/
 /*Start Contact*/
 .contact {
-  min-height: 480px;
+  min-height: 400px;
   background-image: url(/img/mmm9.png);
   background-size: cover;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 74px;
+  padding-bottom: 0;
+  /* margin-bottom: 32px; */
   position: relative;
+}
+
+@media (max-width: 767px) {
+  .contact {
+    margin-bottom: 32px;
+  }
 }
 
 .contact .overlay {
@@ -1457,6 +1511,8 @@ body {
 }
 
 /*End Contact*/
+/*start support-us*/
+/*End support-us*/
 /*Satrt footer*/
 /*End footer*/
 .footer {
@@ -1464,6 +1520,139 @@ body {
   color: #fff;
   padding: 20px;
   text-align: center;
+}
+
+.footer .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 796px) {
+  .footer .container {
+    display: block;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer .container .support-us {
+    display: none;
+  }
+}
+
+.footer .container .support-us h2 {
+  font-size: 17px;
+  color: var(--main-color);
+  text-align: left;
+  padding-bottom: 14px;
+}
+
+@media (max-width: 796px) {
+  .footer .container .support-us h2 {
+    text-align: center;
+  }
+}
+
+.footer .container .support-us .social {
+  text-align: center;
+}
+
+.footer .container .support-us .social a {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (max-width: 991px) {
+  .footer .container .support-us .social a {
+    padding: 8px;
+    margin: 1px;
+    -webkit-transition: 0.6s;
+    transition: 0.6s;
+  }
+}
+
+.footer .container .support-us .social a i {
+  color: white;
+  margin-right: 10px;
+}
+
+.footer .container .support-us .social a small {
+  color: white;
+  text-transform: uppercase;
+}
+
+.footer .container .support-us .social a.fb {
+  background-color: #3b5998;
+}
+
+.footer .container .support-us .social a.fb:hover {
+  background-color: #004182;
+  -webkit-box-shadow: -9px -3px 20px 4px rgba(72, 1, 185, 0.175);
+          box-shadow: -9px -3px 20px 4px rgba(72, 1, 185, 0.175);
+}
+
+.footer .container .support-us .social a.twe {
+  background-color: #55acee;
+}
+
+.footer .container .support-us .social a.twe:hover {
+  background-color: #0264af;
+  -webkit-box-shadow: -9px -3px 20px 4px rgba(24, 133, 235, 0.175);
+          box-shadow: -9px -3px 20px 4px rgba(24, 133, 235, 0.175);
+}
+
+.footer .container .support-us .social a.insta {
+  background-color: #e4405f;
+}
+
+.footer .container .support-us .social a.insta:hover {
+  background-color: #850617;
+  -webkit-box-shadow: -9px -3px 20px 4px rgba(233, 68, 117, 0.175);
+          box-shadow: -9px -3px 20px 4px rgba(233, 68, 117, 0.175);
+}
+
+.footer .container .support-us .social a.linkd {
+  background-color: #004182;
+}
+
+.footer .container .support-us .social a.linkd:hover {
+  background-color: #022547;
+  -webkit-box-shadow: -9px -3px 20px 4px rgba(14, 18, 235, 0.175);
+          box-shadow: -9px -3px 20px 4px rgba(14, 18, 235, 0.175);
+}
+
+@media (max-width: 576px) {
+  .footer .container .support-us .social {
+    display: -ms-inline-grid;
+    display: inline-grid;
+  }
+}
+
+.footer .container .created {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: right;
+  margin-top: 3.5em;
+}
+
+@media (max-width: 796px) {
+  .footer .container .created {
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer .container .created {
+    margin: 0;
+  }
+}
+
+.footer .container .created span a i {
+  color: red;
 }
 
 /*Start Go UB*/
@@ -1518,16 +1707,4 @@ hr {
     max-width: 1140px;
   }
 }
-
-/*End Grid System*/
-/*
-why i can't handle dark mode on my website ......? Referencing CSS class for Dark Mode
-I have this code o
-
-I have this code on my website for running Dark Mode, my problem is specifically in the javascript code: How can I add the class list called dark-mode to handle it with this switch SwitchControl?
-
-This is the code I use:
-
-
-*/
 /*# sourceMappingURL=main.css.map */

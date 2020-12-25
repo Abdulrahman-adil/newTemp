@@ -60,11 +60,85 @@ $(function () {
 
 }());
 
-/* $("body").niceScroll({
-    cursorcolor:"aquamarine",
-    cursorwidth:"16px"
-  });
-     */
+var clicked = false;
+ $('.setting-box .toggle-setting').on('click',function () {
+
+if (clicked == false) {
+$(this).parent('.setting-box').animate({
+        'left' : '0',
+        },1000);
+  clicked = true;
+     } else {
+$(this).parent('.setting-box').animate({
+        'left' : '-200px',
+        },1000);
+  clicked = false;
+ }
+console.log(clicked);
 });
 
- 
+ $(document).click( function () {
+ var target = $(event.target);
+ if (!target.is(".toggle-setting") && !target.is('.setting-box') && clicked == true) {
+  $('.setting-box').animate({
+     'left' :'-200px',
+  },1000);
+   clicked = false;
+   console.log(clicked);
+ }
+});  
+
+
+/*      $('.setting-box').click(function() {
+        $('.toggle-setting').hide(1000);
+
+     });  */
+     // press anywere to close the setting box
+/*      $(document).click(function(e) {
+         var setting = $(".setting-box");
+         if (!setting.is(e.target) && setting.has(e.target === 0)) {
+             setting.fadeOut();
+         }
+     }) */
+
+/*      $('.toggle-setting').click(function () {
+         $('.setting-box').addClass('open');
+     });
+      
+     $('body').click(function () {
+         $('.setting-box').removeClass('open');
+     }) */
+
+     // setting box
+/*      var clicked = false;
+   $('.setting-box .toggle-setting').on('click',function () {
+         $(this).parent('.setting-box').toggleClass('open');
+
+         if ($(this).parent('.setting-box').hasClass('open')) {
+            
+            $(this).parent('.setting-box').animate({
+                left:0,
+            },1000);
+
+/*           $('body').animate({
+                paddingLeft: '200px',
+            });  */
+
+/*         } else {
+        $(this, 'body').parent('.setting-box').animate({
+              left:'-200',
+          },1000);
+        }
+    });
+        $(document).click( function () {
+            var target = $(event.target);
+            if (!target.is(".toggle-setting") && !target.is('.setting-box') && clicked == true) {
+             $('.setting-box').animate({
+                'left' :'-200px',
+             });
+              clicked = false;
+              console.log(clicked);
+            }
+           });   */
+
+});
