@@ -77,16 +77,21 @@ $(this).parent('.setting-box').animate({
 console.log(clicked);
 });
 
- $(document).click( function () {
- var target = $(event.target);
+ $(document).click( function (e) {
+ var target = $(e.target);
  if (!target.is(".toggle-setting") && !target.is('.setting-box') && clicked == true) {
   $('.setting-box').animate({
      'left' :'-200px',
   },1000);
    clicked = false;
    console.log(clicked);
+  
  }
 });  
+
+$(".toggle-setting, .setting-box").click(function(e) {
+    e.stopPropagation();
+  })
 
 
 /*      $('.setting-box').click(function() {
