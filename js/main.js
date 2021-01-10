@@ -184,6 +184,39 @@ let landingPage = document.querySelector(".landing-page");
 
  };
 
+  // select second skills selector 
+
+/*   let ourSkills2 = document.querySelector('.skills-2');
+
+  window.onscroll = function () {
+ 
+     // skills offset Top 
+     let skillsOffsetTop = ourSkills2.offsetTop;
+  
+   // Skills Outer Heigth 
+ 
+   let skillsOuterHeight = ourSkills2.offsetHeight;
+ 
+   //window Height 
+   let windowHeight = this.innerHeight;
+ 
+   // window scrollTop 
+   let windowScrollTop = this.pageYOffset;
+ 
+     if (windowScrollTop > (skillsOffsetTop + skillsOuterHeight - windowHeight)) {
+ 
+      let allSkills = document.querySelectorAll('.progress .progress-bar span');
+ 
+      allSkills.forEach(skill => {
+ 
+ 
+       skill.style.width = skill.dataset.progress; 
+      });
+ 
+     }
+ 
+  };
+ */
 
  // Create PopUp With THe Image 
 
@@ -474,3 +507,20 @@ const fontSelector = document.getElementById('myfont');
     });
 
 
+    // darkmood js 
+
+ const options = {
+    bottom: '15px', // default: '32px'
+    right: 'unset', // default: '32px'
+    left: '5px', // default: 'unset'
+    time: '0.5s', // default: '0.3s'
+    mixColor: '#fff', // default: '#fff'
+  //  backgroundColor: '#fff',  // default: '#fff'
+    buttonColorDark: '#100f2c',  // default: '#100f2c'
+    buttonColorLight: '#fff', // default: '#fff'
+    saveInCookies: true, // default: true,
+    label: '🌓', // default: ''
+    autoMatchOsTheme: false // default: true 
+  }
+  const darkmode = new Darkmode(options);
+darkmode.showWidget();

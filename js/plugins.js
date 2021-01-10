@@ -66,15 +66,17 @@ var clicked = false;
 if (clicked == false) {
 $(this).parent('.setting-box').animate({
         'left' : '0',
-        },1000);
+        },500);
   clicked = true;
+  $('.toggle-setting').hide(500);
      } else {
 $(this).parent('.setting-box').animate({
         'left' : '-200px',
-        },1000);
+        },500);
   clicked = false;
  }
 console.log(clicked);
+
 });
 
  $(document).click( function (e) {
@@ -82,10 +84,10 @@ console.log(clicked);
  if (!target.is(".toggle-setting") && !target.is('.setting-box') && clicked == true) {
   $('.setting-box').animate({
      'left' :'-200px',
-  },1000);
+  },500);
    clicked = false;
    console.log(clicked);
-  
+   $('.toggle-setting').show(500);
  }
 });  
 
@@ -93,57 +95,18 @@ $(".toggle-setting, .setting-box").click(function(e) {
     e.stopPropagation();
   })
 
+    // smooth Scroll To Div
 
-/*      $('.setting-box').click(function() {
-        $('.toggle-setting').hide(1000);
+    $('.links li a').click(function (e) {
 
-     });  */
-     // press anywere to close the setting box
-/*      $(document).click(function(e) {
-         var setting = $(".setting-box");
-         if (!setting.is(e.target) && setting.has(e.target === 0)) {
-             setting.fadeOut();
-         }
-     }) */
-
-/*      $('.toggle-setting').click(function () {
-         $('.setting-box').addClass('open');
-     });
-      
-     $('body').click(function () {
-         $('.setting-box').removeClass('open');
-     }) */
-
-     // setting box
-/*      var clicked = false;
-   $('.setting-box .toggle-setting').on('click',function () {
-         $(this).parent('.setting-box').toggleClass('open');
-
-         if ($(this).parent('.setting-box').hasClass('open')) {
-            
-            $(this).parent('.setting-box').animate({
-                left:0,
-            },1000);
-
-/*           $('body').animate({
-                paddingLeft: '200px',
-            });  */
-
-/*         } else {
-        $(this, 'body').parent('.setting-box').animate({
-              left:'-200',
-          },1000);
-        }
+        $('html, body').animate({
+            scrollTop: $('#' + $(this).data('value')).offset().top
+        }, 500);
+        e.preventDefault();
     });
-        $(document).click( function () {
-            var target = $(event.target);
-            if (!target.is(".toggle-setting") && !target.is('.setting-box') && clicked == true) {
-             $('.setting-box').animate({
-                'left' :'-200px',
-             });
-              clicked = false;
-              console.log(clicked);
-            }
-           });   */
 
+// loding page 
+$(window).on("load",function() {
+    $(".loding-wrapper").fadeOut("slow");
+})
 });
