@@ -509,7 +509,7 @@ img {
 
 @media (max-width: 576px) {
   .setting-box .settings-container .option-box .dark-mode-toggle {
-    bottom: -19em;
+    bottom: -15em;
   }
 }
 
