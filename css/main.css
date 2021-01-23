@@ -988,7 +988,7 @@ img {
     font-weight: bold;
     -webkit-transition: .4s;
     transition: .4s;
-    font-size: 17px;
+    font-size: 15px;
   }
   .landing-page .overlay .container .header .links-container .links.open li a:hover {
     color: #3d3737;
