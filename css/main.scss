@@ -1,4 +1,4 @@
-
+$colorWarning: red;
 :root {
   --main-color: #FF9800;
 }
@@ -7,8 +7,8 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  color: #222;
-	background-color: #fff;
+/*   color: #222;
+	background-color: #fff; */
 }
 
 [data-font="open-sans"] {
@@ -243,12 +243,13 @@ img {
 }
 
 /*Setting-box*/
+
 .setting-box {
   position: fixed;
   left: -200px;
   top: 0;
   width: 200px;
-  z-index: 1000;
+  z-index: 99999;
   min-height: 100vh;
   background-color: #fff;
   background-clip: padding-box;
@@ -303,11 +304,12 @@ img {
   .settings-container {
     color: #fff;
     .option-box{
-     /*  padding: 10px; */
-      text-align: center;
+      position: relative;
+      /* padding: 10px; */
+      /* text-align: center; */
       /* background: #66c9d652; */
-     /*  border-radius: 5px; */
-      margin: 6px; 
+      /* border-radius: 5px; */
+      margin: 19px;
       .bullets-option {
         @media (max-width: 576px) {
           display: none;
@@ -327,9 +329,12 @@ img {
           cursor: pointer;
         }
       }
-        h4{
-            color: #060000;
-            font-size:14px ;
+        span{
+          color: #060000;
+          font-size: 14px;
+          position: relative;
+          background: #FFF;
+          Z-INDEX: 2;
             @media (max-width: 576px) {
               margin-bottom: 6px;
               margin-top: 11px;
@@ -339,16 +344,18 @@ img {
     .colors-list{
         list-style: none;
         margin-left: -42px;
+        margin-top: 0;
+        margin-bottom: 0;
         @media (max-width: 576px) {
           margin-bottom: -5px;
         }
         li{
-            width: 20px;
-            height: 20px;
-            background-color: #333;
-            border-radius: 50%;
-            cursor: pointer;
-            border: 3px solid#f1f1f1;
+          width: 20px;
+          height: 20px;
+          background-color: #333;
+          border-radius: 50%;
+          cursor: pointer;
+          border: 1px solid #f1f1f1;
             display: inline-flex;
             &.active{
              border-color:#05158a;
@@ -376,6 +383,24 @@ img {
           background-color:#9c27b0;
       }
   }
+  .photo-list {
+    margin-left: -23%;
+    margin-top: 5px;
+    margin-bottom: -7px;
+    li {
+      display: inline-block;
+      background: #b3b3b3;
+      padding: 6px;
+      cursor: pointer;
+      opacity: .5;
+      border-radius: 5px;
+      color: #020000;
+      &.active{
+        opacity: 1;
+        border: 1px solid var(--min--color);
+      }
+    }
+  }
   span.active{
     opacity: 1;
   }
@@ -394,32 +419,94 @@ img {
   .fonts {
   /*   display: flex; */
     select{
-      color: #fff;
-      background-color: var(--main-color);
-      width: 66%;
-      padding: 5px;
-      border: none;
+     
+      background-color: rgba(226, 226, 226, 0.69);
+      color: #666666;
+      width: 160px;
+      padding: 8px;
       border-radius: 5px;
-      border: 1px solid var(--main-color);
+      border: none;
       border-radius: 5px;
       cursor: pointer;
       outline: none;
+      font-size: 16px;
+      font-weight: 600;
       option {
-        background-color: #fff;
-        color: #333;
-        text-align: center;
+        font-weight: normal;
+        display: block;
+        white-space: pre;
+        min-height: 1.2em;
+        padding: 0px 2px 1px;    
         &:hover{
           color:var(--main-color);
         }
       }
     }
   }
-  .darkMode {
-    h3 {
-      
-      font-size: 14px;
-    }
+/*button toggle dark mood*/
+.dark-mode-toggle {
+  position: absolute;
+  z-index: 100;
+  bottom: -14em;
+  left: 0em;
+  color: var(--foreground);
+  border: 2px solid currentColor;
+  padding: 4px;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  @media (max-width: 576px){
+    bottom: -19em;
   }
+  svg {
+    position: relative;
+  }
+}
+
+.btn-group {
+  margin: 2em 0;
+  display: relative;
+}
+
+.btn {
+  padding: 1em 2em;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 5px;
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+}
+
+.btn + .btn {
+  margin-left: 1em;
+}
+
+.btn-secondary {
+  background: var(--foreground);
+  color: var(--background);
+  // border: currentColor solid 2px;
+}
+
+.btn-accent {
+  background: var(--clr-accent);
+  color: var(--foreground);
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: var(--foreground) 2px solid;
+  left: -4px;
+  top: 4px;
+  border-radius: inherit;
+  z-index: -1;
+}
+/*button toggle dark mood*/
   .support-us-mo {
     display: none !important;
     @media (max-width: 576px){
@@ -430,6 +517,7 @@ img {
     color: #333;
 
       }
+
   }
   .social {
     text-align: center;
@@ -469,20 +557,67 @@ img {
 
   }
 }
+&:not(:last-of-type):after {
+  content: "";
+  position: absolute;
+  top: 23%;
+  left: 11px;
+  z-index: 1;
+  width: 166px;
+  height: 1px;
+  background: #dcdcdc;
+}
+}
+
 }
 .reset-option{
-  background-color: #E91E63;
+  padding: .75rem 1.25rem;
+  display: inline-block;
   border: none;
-  width: 151px;
-  /* text-align: center; */
+  transition: all .3s;
+  letter-spacing: .15rem;
   margin: auto;
   display: block;
-  padding: 8px;
+  padding: 12px;
   color: #fff;
-  font-weight: bold;
-  border-radius: 7px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  cursor: pointer;
+  width: 160px;
+&:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: $colorWarning;
+  left: 0;
+  bottom: 0;
+ z-index: -2;
+ border-radius: 10px;
+
+}
+&::before{
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  background-color: darken($colorWarning, 15%);
+  transition: all .3s;
+  border-radius: 10px;
+  z-index: -1;
+}
+&:hover {
+  color: #fff;
+  &:before{
+    width: 100%;
+  }
 }
 }
+
 }
 /*End Setting-box*/
 
@@ -785,6 +920,7 @@ display: none !important;
                   color: rgb(2, 0, 0) ;
                   font-weight: bold;
                   transition: .4s ;
+                  font-size: 17px;
                   &:hover {
                     color: #3d3737;
                     padding-left: 2px;;
@@ -913,7 +1049,7 @@ section {
         font-weight: bolder;
         /* right: -4px; */
         /* left: 8em; */
-        margin-top: 6px;
+        margin-top: 2px;
         @media (max-width: 767px) {
           margin-left: 1em;
       }
@@ -939,7 +1075,7 @@ section {
               color: #fff;
               position: absolute;
               right: 0;
-              top: 8px;
+              top: 5px;
   
           }
         }
@@ -1266,10 +1402,7 @@ div {
     }
     .svg{
       padding-top: 10px;
-      &:hover{
-        border: 4px solid var(--main-color);
-        transition: 0.5s ease-in-out;
-      }
+
     }
     h4 {
       font-size: 22px;
@@ -1576,7 +1709,6 @@ div {
         &:hover{
           background-color: #022547;
           box-shadow: -9px -3px 20px 4px rgba(14, 18, 235, 0.175);  
-
         }
       }
     }
@@ -1584,7 +1716,7 @@ div {
       display: inline-grid;
     }
   }
-  
+
 }
 .created {
   flex: 1;
@@ -1671,26 +1803,41 @@ span {
   100% { height: 0%;}
 }
 /*Start loding page*/
+
 /*Dark mood*/
-.darkmode-background {
-  background: none !important;
+:root {
+  /* --clr-light: #fdffc4; */
+  --clr-dark: #010a08;
+  --clr-primary: #dbffa2;
+  --clr-secondary: #c3fcf2;
+  --clr-accent: #ff7750;
+
+  --foreground: var(--clr-dark);
+  --background: var(--clr-light);
+
+/*   --ff-title: "Playfair Display", serif;
+  --ff-body: "Assistant", sans-serif; */
 }
- .darkMode--activated p, .darkMode--activated li {
-  color: #000;
-} 
- .darkmode--activated .logo {
-  mix-blend-mode: difference;
-} 
- .button {
-  isolation: isolate;
-} 
-.img {
-  isolation: isolate;
-  z-index: 500;
-} 
- .darkmode-layer, .darkmode-toggle {
-  z-index: 500;
-} 
+.darkmode {
+  --clr-light: #fdffc4;
+  --clr-dark: #010a08;
+  --clr-primary: #202302;
+  --clr-secondary: #00100d;
+  --clr-accent: #ff7750;
+
+/*   --foreground: var(--clr-light); */
+  --background: var(--clr-dark);
+  .test {
+    background-color:  #000000; 
+  }
+}
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--ff-body);
+  font-size: 18px;
+  line-height: 1.6;
+}
 /*Dark mood*/
 /*Frame work*/
 .clearfix {

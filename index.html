@@ -27,14 +27,14 @@
         <i class="fa fa-gear cus-icon fa-spin"></i>
         <!-- <span class="icon-spin5"></span> -->
       </div>
-      <div class="setings">
+     <!--  <div class="setings">
         <h2>Settings</h2>
-      </div>
+      </div> -->
       <div class="settings-container">
 
         <!-- Colors -->
         <div class="option-box">
-          <h4>Active Colors</h4>
+          <span>Active Colors</span>
           <ul class="colors-list">
             <li class="active" data-color='#FF9800'></li>
             <li data-color='#E91E63'></li>
@@ -44,20 +44,31 @@
             <li data-color='#9c27b0'></li>
           </ul>
         </div>
-        <hr class="hr1">
+        <div class="option-box">
+          <span>switch photo</span>
+          <ul class="photo-list">
+            <li class="active" data-photo="0">1</li>
+            <li data-photo="1" >2</li>
+            <li data-photo="2" >3</li>
+            <li data-photo="3" >4</li>
+            <li data-photo="4" >5</li>
+            <li data-photo="5" >6</li>
+          </ul>
+        </div>
+         <!-- <hr class="hr1"> -->
         <!-- Random background -->
         <div class="option-box ">
-          <h4>Random Background</h4>
+          <span>Random Background</span>
           <div class="random-back ">
             <span class="yes active " data-background="yes">ON</span>
             <span class="no" data-background="no">OFF</span>
           </div>
         </div>
-        <hr class="hr1">
+       <!--  <hr class="hr1"> -->
         <!-- Random background -->
         <!-- Show Bullets -->
         <div class="option-box">
-          <h4>Show Bullets</h4>
+          <span>Show Bullets</span>
           <div class="bullets-option">
             <span class="yes active" data-display="show">ON</span>
             <span class="no" data-display="hide">OFF</span>
@@ -65,7 +76,7 @@
           <!-- Closed bullets in mobile mode-->
           <span class="close">closed in this mode</span>
         </div>
-        <hr class="hr1">
+       <!--  <hr class="hr1"> -->
         <!-- Show Bullets -->
          <!-- Dark Mode -->
      <!--    <div class="option-box">
@@ -98,7 +109,7 @@
         <!-- Dark Mode -->
 <!-- font style -->
 <div class="option-box">
-  <h4>Font Style</h4>
+  <span>Font Style</span>
   <div class="fonts">
    <!--  <button type="button" onclick="changeFont()">Change font</button> -->
    <select name="" id="myfont" class="input" >
@@ -109,10 +120,17 @@
     </select>
   </div>
 </div>
-<hr class="hr1">
+<!-- <hr class="hr1"> -->
 <!-- font style -->
 <!--Reswt Option-->
-<button class="reset-option">Reset Options</button>
+<div class="option-box">
+
+    <button id="dark-mode-toggle" class="dark-mode-toggle">
+      <svg width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496"><path fill="currentColor" d="M8,256C8,393,119,504,256,504S504,393,504,256,393,8,256,8,8,119,8,256ZM256,440V72a184,184,0,0,1,0,368Z" transform="translate(-8 -8)"/></svg>
+    </button>
+
+        <!--Toggle Button Dark mode-->
+</div>
 <!--Reswt Option-->
 
         <!-- Support Us-->
@@ -129,6 +147,10 @@
     </div>
     <!-- Support Us-->
 </div>
+<button class="reset-option from-top">
+ Reset
+</button>
+   
 </div>
 
     
@@ -510,11 +532,12 @@
     </div>
       <!-- Go Up-->
 
-      <!-- loding page -->
+      <!-- loading page -->
       <div class="loding-wrapper">
       <span class="loader"><span class="loader-inner"></span></span>
     </div>
       <!-- loding page -->
+
 
 <!--       <script src="js/jquery-1.12.4.min.js"></script>-->  
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

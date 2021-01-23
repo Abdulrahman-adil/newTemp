@@ -50,30 +50,30 @@ $(function () {
                 $('.slider div').eq(0).addClass('active').fadeIn();
                 autoSlider();
 
-
-
             });
-
         }
-
     });
-
 }());
-
+// fixed menue
 var clicked = false;
+var Body = $('body');
  $('.setting-box .toggle-setting').on('click',function () {
 
 if (clicked == false) {
 $(this).parent('.setting-box').animate({
         'left' : '0',
-        },500);
+        });
   clicked = true;
-  $('.toggle-setting').hide(500);
+/*   Body.animate({
+      paddingLeft: '200px'
+  });  */
+  $('.toggle-setting').hide();
      } else {
 $(this).parent('.setting-box').animate({
         'left' : '-200px',
-        },500);
+        });
   clicked = false;
+
  }
 console.log(clicked);
 
@@ -84,10 +84,13 @@ console.log(clicked);
  if (!target.is(".toggle-setting") && !target.is('.setting-box') && clicked == true) {
   $('.setting-box').animate({
      'left' :'-200px',
-  },500);
+  });
    clicked = false;
    console.log(clicked);
-   $('.toggle-setting').show(500);
+   $('.toggle-setting').show();
+/*    Body.animate({
+    paddingLeft: '-200px'
+});  */
  }
 });  
 
@@ -110,3 +113,7 @@ $(window).on("load",function() {
     $(".loding-wrapper").fadeOut("slow");
 })
 });
+
+
+  // start buttons with effects
+

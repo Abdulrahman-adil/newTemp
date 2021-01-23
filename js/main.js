@@ -6,6 +6,7 @@ let bulletLocalItem = localStorage.getItem("bullets_option");
  let backGroundLocalItem = localStorage.getItem("background_option"); 
  // check if there's  local storage darkmood
  let DarkMood = localStorage.getItem("Dark_Mode"); 
+ let landingPage = document.querySelector(".landing-page");
 //=================================================================================================
 if (mainColors !== null) {
 /*   console.log('local storage is not Empty You Can Set On Root Now');
@@ -22,13 +23,66 @@ if (mainColors !== null) {
     });
 };
 //=================================================================================================
+// local-storge photo-list and li move between photo
+
+const storgePhoto = localStorage.getItem('option-photo');
+const storgeLanding = localStorage.getItem('option-landing');
+if (storgeLanding !== null) {
+  landingPage.style.backgroundImage = storgeLanding;
+  console.log(storgeLanding);
+};
+if (storgePhoto !== null) {
+
+  document.querySelectorAll('.photo-list li').forEach(active => {
+      active.classList.remove('active');
+
+      if (active.dataset.photo === storgePhoto) {
+
+          active.classList.add('active')
+      }
+  })
+
+}
+   // Select List-photo li 
+   const photoLi  = document.querySelectorAll('.photo-list li');
+   // remove class active and class active when clicked 
+   photoLi.forEach(li => {
+     li.addEventListener('click', function (e) {
+       handleActive(e);
+       // change image when clcik li 
+       let choseImg = e.target.dataset.photo;
+       if (e.target.dataset.photo == 0) {
+         landingPage.style.backgroundImage = 'url("img/' + imgArray[0] + '")'
+         localStorage.setItem('option-landing', landingPage.style.backgroundImage = 'url("img/' + imgArray[0] + '")')
+       } else if (e.target.dataset.photo == 1) {
+        landingPage.style.backgroundImage = 'url("img/' + imgArray[1] + '")'
+        localStorage.setItem('option-landing', landingPage.style.backgroundImage = 'url("img/' + imgArray[1] + '")')
+       } else if (e.target.dataset.photo == 2) {
+        landingPage.style.backgroundImage = 'url("img/' + imgArray[2] + '")'
+        localStorage.setItem('option-landing', landingPage.style.backgroundImage = 'url("img/' + imgArray[2] + '")')
+       } else if (e.target.dataset.photo == 3) {
+        landingPage.style.backgroundImage = 'url("img/' + imgArray[3] + '")'
+        localStorage.setItem('option-landing', landingPage.style.backgroundImage = 'url("img/' + imgArray[3] + '")')
+       } else if (e.target.dataset.photo == 4) {
+         landingPage.style.backgroundImage = 'url("img/' + imgArray[4] + '")'
+         localStorage.setItem('option-landing', landingPage.style.backgroundImage = 'url("img/' + imgArray[4] + '")')
+        } else if (e.target.dataset.photo == 5) {
+          landingPage.style.backgroundImage = 'url("img/' + imgArray[5] + '")'
+          localStorage.setItem('option-landing', landingPage.style.backgroundImage = 'url("img/' + imgArray[5] + '")')
+       
+       };
+
+       localStorage.setItem('option-photo', choseImg);
+       });
+       });
+
    // Random BackGround Option 
    let backgroundOption = true;
    // variable to control the background interval 
    let backgroundInterval;
 
 // check id random backgrond local storage is not Empty 
-if (backGroundLocalItem !== null ) {
+/* if (backGroundLocalItem !== null ) {
   if (backGroundLocalItem === "true") {
     backgroundOption = true;
   } else {
@@ -44,7 +98,23 @@ if (backGroundLocalItem !== null ) {
     document.querySelector(".random-back .no").classList.add("active");
   } 
 }
+ */
+const backGroundLoca = localStorage.getItem('option-backgound');
 
+if (backGroundLoca !== null) {
+    document.querySelectorAll('.random-back span').forEach(e => {
+        e.classList.remove('active')
+    });
+    if (backGroundLoca === 'true') {
+      backgroundOption = true;
+        document.querySelector('.random-back .yes').classList.add('active');
+    } else {
+      backgroundOption = false;
+        document.querySelector('.random-back .no').classList.add('active');
+    }
+
+
+}
 
 // Toggle Span Class On Icon
 /* let toogleBox = document.querySelector(".toggle-setting .fa-gear").onclick = function () {
@@ -104,6 +174,7 @@ randomBackground.forEach(span => {
 
      if (e.target.dataset.background === 'yes') {
       backgroundOption = true;
+      landingPage.style.backgroundImage ='url("img/' + imgArray[0] + '")'
       randomizeImg();
 
       localStorage.setItem("background_option", true);
@@ -119,10 +190,10 @@ randomBackground.forEach(span => {
 });
 
 // select landing page Element 
-let landingPage = document.querySelector(".landing-page");
+/* let landingPage = document.querySelector(".landing-page"); */
 
 // Get Array Of Imgs 
-  let imgArray = ["001.jpg","002.jpg","003.jpg","004.jpg","005.jpg","006.jpg"];
+  const imgArray = ["001.jpg","002.jpg","003.jpg","004.jpg","005.jpg","006.jpg"];
 
  // function to randomize imgs 
  function randomizeImg() {
@@ -133,7 +204,7 @@ let landingPage = document.querySelector(".landing-page");
      // change background url 
      landingPage.style.backgroundImage = 'url("img/' + imgArray[randomNumber] + '")';
    }, 10000);
-   };
+   }
  };
 
  randomizeImg();
@@ -466,19 +537,19 @@ e.stopPropagation();
 }
 // dark mode icon
 
-let switchCont = document.querySelectorAll(".SwitchControl");
+/* let switchCont = document.querySelectorAll(".SwitchControl"); */
 /* let dark = document.querySelectorAll('.darkMode'); */
 
 
-switchCont.forEach(
+/* switchCont.forEach(
   switchControl => switchControl.addEventListener("click", () => toggleSwitch(switchControl))
-  );
+  ); */
 
 /* dark.forEach (
   darkMode => darkMode.addEventListener("click"), () => toggleSwitch(dark)
 ) */
 
-const toggleSwitch = (control) => {
+/* const toggleSwitch = (control) => {
     if(control.classList.contains("off")) {
         enableSwitch(control);
     }
@@ -496,7 +567,7 @@ const enableSwitch = (control) => {
 const disableSwitch = (control) => {
     control.classList.remove("on");
     control.classList.add("off");
-}
+} */
 
 
 // change font style 
@@ -507,20 +578,42 @@ const fontSelector = document.getElementById('myfont');
     });
 
 
-    // darkmood js 
+    // Dark mode
+// check for saved 'darkMode' in localStorage
+let darkMode = localStorage.getItem('darkMode'); 
 
- const options = {
-    bottom: '15px', // default: '32px'
-    right: 'unset', // default: '32px'
-    left: '5px', // default: 'unset'
-    time: '0.5s', // default: '0.3s'
-    mixColor: '#fff', // default: '#fff'
-  //  backgroundColor: '#fff',  // default: '#fff'
-    buttonColorDark: '#100f2c',  // default: '#100f2c'
-    buttonColorLight: '#fff', // default: '#fff'
-    saveInCookies: true, // default: true,
-    label: '🌓', // default: ''
-    autoMatchOsTheme: false // default: true 
+const darkModeToggle = document.querySelector('#dark-mode-toggle');
+
+const enableDarkMode = () => {
+  // 1. Add the class to the body
+  document.body.classList.add('darkmode');
+  // 2. Update darkMode in localStorage
+  localStorage.setItem('darkMode', 'enabled');
+}
+
+const disableDarkMode = () => {
+  // 1. Remove the class from the body
+  document.body.classList.remove('darkmode');
+  // 2. Update darkMode in localStorage 
+  localStorage.setItem('darkMode', null);
+}
+ 
+// If the user already visited and enabled darkMode
+// start things off with it on
+if (darkMode === 'enabled') {
+  enableDarkMode();
+}
+
+// When someone clicks the button
+darkModeToggle.addEventListener('click', () => {
+  // get their darkMode setting
+  darkMode = localStorage.getItem('darkMode'); 
+  
+  // if it not current enabled, enable it
+  if (darkMode !== 'enabled') {
+    enableDarkMode();
+  // if it has been enabled, turn it off  
+  } else {  
+    disableDarkMode(); 
   }
-  const darkmode = new Darkmode(options);
-darkmode.showWidget();
+});
