@@ -370,7 +370,7 @@ img {
 .setting-box .settings-container .option-box .colors-list {
   list-style: none;
   margin-left: -42px;
-  margin-top: 0;
+  margin-top: 4;
   margin-bottom: 0;
 }
 
@@ -384,7 +384,7 @@ img {
   width: 20px;
   height: 20px;
   background-color: #333;
-  border-radius: 50%;
+  border-radius: 15%;
   cursor: pointer;
   border: 1px solid #f1f1f1;
   display: -webkit-inline-box;
@@ -425,15 +425,15 @@ img {
 }
 
 .setting-box .settings-container .option-box .photo-list {
-  margin-left: -23%;
-  margin-top: 5px;
-  margin-bottom: -7px;
+  margin-left: -25%;
+  margin-top: 9px;
+  margin-bottom: 0px;
 }
 
 .setting-box .settings-container .option-box .photo-list li {
   display: inline-block;
   background: #b3b3b3;
-  padding: 6px;
+  padding: 7px;
   cursor: pointer;
   opacity: .5;
   border-radius: 5px;
@@ -460,6 +460,10 @@ img {
   font-weight: bold;
   opacity: .5;
   cursor: pointer;
+}
+
+.setting-box .settings-container .option-box .random-back, .setting-box .settings-container .option-box .bullets-option, .setting-box .settings-container .option-box .fonts {
+  margin-top: 8px;
 }
 
 .setting-box .settings-container .option-box .fonts {
@@ -577,36 +581,63 @@ img {
   text-align: center;
 }
 
-.setting-box .settings-container .option-box .social a {
-  padding: 10px;
-  border-radius: 5px;
+.setting-box .settings-container .option-box .social ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 5px 0 0px;
+}
+
+.setting-box .settings-container .option-box .social ul li {
+  display: inline-block;
+  line-height: 1.6;
+}
+
+.setting-box .settings-container .option-box .social ul li a {
   text-decoration: none;
-  cursor: pointer;
 }
 
-.setting-box .settings-container .option-box .social a i {
-  color: white;
+@media (max-width: 991px) {
+  .setting-box .settings-container .option-box .social ul li a {
+    -webkit-transition: 0.6s;
+    transition: 0.6s;
+  }
 }
 
-.setting-box .settings-container .option-box .social a small {
-  color: white;
-  text-transform: uppercase;
+.setting-box .settings-container .option-box .social ul li a i {
+  padding: 7px 0px 6px;
+  background-color: #231f1f;
+  color: #ffffff;
+  text-align: center;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  zoom: 1;
+  filter: alpha(opacity=60);
+  /* opacity: 0.6; */
+  width: 34px;
 }
 
-.setting-box .settings-container .option-box .social a.fb {
-  background-color: #3b5998;
-}
-
-.setting-box .settings-container .option-box .social a.twe {
-  background-color: #55acee;
-}
-
-.setting-box .settings-container .option-box .social a.insta {
-  background-color: #e4405f;
-}
-
-.setting-box .settings-container .option-box .social a.linkd {
+.setting-box .settings-container .option-box .social ul li a i.fa-facebook-square:hover {
   background-color: #004182;
+  -webkit-box-shadow: -9px -3px 20px 4px rgba(72, 1, 185, 0.175);
+          box-shadow: -9px -3px 20px 4px rgba(72, 1, 185, 0.175);
+}
+
+.setting-box .settings-container .option-box .social ul li a i.fa-twitter:hover {
+  background-color: #0264af;
+  -webkit-box-shadow: -9px -3px 20px 4px rgba(24, 133, 235, 0.175);
+          box-shadow: -9px -3px 20px 4px rgba(24, 133, 235, 0.175);
+}
+
+.setting-box .settings-container .option-box .social ul li a i.fa-instagram:hover {
+  background-color: #850617;
+  -webkit-box-shadow: -9px -3px 20px 4px rgba(233, 68, 117, 0.175);
+          box-shadow: -9px -3px 20px 4px rgba(233, 68, 117, 0.175);
+}
+
+.setting-box .settings-container .option-box .social ul li a i.fa-linkedin:hover {
+  background-color: #022547;
+  -webkit-box-shadow: -9px -3px 20px 4px rgba(14, 18, 235, 0.175);
+          box-shadow: -9px -3px 20px 4px rgba(14, 18, 235, 0.175);
 }
 
 @media (max-width: 576px) {
@@ -625,6 +656,10 @@ img {
   width: 166px;
   height: 1px;
   background: #dcdcdc;
+}
+
+.setting-box .settings-container .option-box:not(:last-of-type):after:nth-child(6) {
+  display: none;
 }
 
 .setting-box .reset-option {
@@ -1826,18 +1861,13 @@ img {
 .footer {
   background-color: #333;
   color: #fff;
+  padding: 20px;
 }
 
 @media (max-width: 767px) {
   .footer {
     margin-top: -30px;
   }
-}
-
-.footer .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 @media (max-width: 576px) {
@@ -1865,72 +1895,67 @@ img {
 }
 
 .footer .container .support-us .social {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  /*       display: flex;
+      flex-wrap: wrap; */
+  float: left;
+  width: 50%;
 }
 
-.footer .container .support-us .social a {
-  padding: 10px;
-  margin: 5px;
-  border-radius: 5px;
+.footer .container .support-us .social ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 5px 0 0px;
+}
+
+.footer .container .support-us .social ul li {
+  display: inline-block;
+  line-height: 1.6;
+}
+
+.footer .container .support-us .social ul li a {
   text-decoration: none;
-  cursor: pointer;
 }
 
 @media (max-width: 991px) {
-  .footer .container .support-us .social a {
+  .footer .container .support-us .social ul li a {
     -webkit-transition: 0.6s;
     transition: 0.6s;
   }
 }
 
-.footer .container .support-us .social a i {
-  color: white;
+.footer .container .support-us .social ul li a i {
+  padding: 7px 0px 6px;
+  background-color: #231f1f;
+  color: #ffffff;
+  margin-right: 4px;
+  text-align: center;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  zoom: 1;
+  filter: alpha(opacity=60);
+  /* opacity: 0.6; */
+  width: 46px;
 }
 
-.footer .container .support-us .social a small {
-  color: white;
-  text-transform: uppercase;
-}
-
-.footer .container .support-us .social a.fb {
-  background-color: #3b5998;
-}
-
-.footer .container .support-us .social a.fb:hover {
+.footer .container .support-us .social ul li a i.fa-facebook-square:hover {
   background-color: #004182;
   -webkit-box-shadow: -9px -3px 20px 4px rgba(72, 1, 185, 0.175);
           box-shadow: -9px -3px 20px 4px rgba(72, 1, 185, 0.175);
 }
 
-.footer .container .support-us .social a.twe {
-  background-color: #55acee;
-}
-
-.footer .container .support-us .social a.twe:hover {
+.footer .container .support-us .social ul li a i.fa-twitter:hover {
   background-color: #0264af;
   -webkit-box-shadow: -9px -3px 20px 4px rgba(24, 133, 235, 0.175);
           box-shadow: -9px -3px 20px 4px rgba(24, 133, 235, 0.175);
 }
 
-.footer .container .support-us .social a.insta {
-  background-color: #e4405f;
-}
-
-.footer .container .support-us .social a.insta:hover {
+.footer .container .support-us .social ul li a i.fa-instagram:hover {
   background-color: #850617;
   -webkit-box-shadow: -9px -3px 20px 4px rgba(233, 68, 117, 0.175);
           box-shadow: -9px -3px 20px 4px rgba(233, 68, 117, 0.175);
 }
 
-.footer .container .support-us .social a.linkd {
-  background-color: #004182;
-}
-
-.footer .container .support-us .social a.linkd:hover {
+.footer .container .support-us .social ul li a i.fa-linkedin:hover {
   background-color: #022547;
   -webkit-box-shadow: -9px -3px 20px 4px rgba(14, 18, 235, 0.175);
           box-shadow: -9px -3px 20px 4px rgba(14, 18, 235, 0.175);
@@ -1944,11 +1969,7 @@ img {
 }
 
 .footer .container .created {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
   text-align: right;
-  margin-top: 3.5em;
 }
 
 @media (max-width: 576px) {
@@ -2131,9 +2152,6 @@ img {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--ff-body);
-  font-size: 18px;
-  line-height: 1.6;
 }
 
 /*Dark mood*/
